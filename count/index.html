@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>theClipboard</title>
+    <link href="../inc/stylesheet.css" rel="stylesheet" type="text/css"/>
+    <link href="../inc/stylez.css" rel="stylesheet" type="text/css"/>
+    <title>Report Selection</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+
+</head>
+
+<body>
+<p>Select Your Option</p>
+
+<div data-role='collapsible' class="ui-content">
+    <h1> Inventory Count</h1>
+    <form id="initInvCount" name="initInvCount" method="POST" action="" class="initForms">
+    <div class="ui-grid-b">
+
+            <div class="ui-block-a" id="countDate"></div>
+            <div class="ui-block-b" id="countCat"></div>
+            <div class="ui-block-c" id="countLoc"></div>
+            <div id="toCount">
+                <input type="submit" name="submit" value="Start Inventory Count"/>
+            </div>
+
+    </div>
+    </form>
+
+</div>
+
+<a class='ui-btn' id="countBtn" href="#">Inventory Count</a>
+<a class='ui-btn' id='supplyCount' href="#">Supply Count</a>
+<script>
+    $(document).ready(function () {
+        $("#countDate").load('../inc/selectDate.php');
+        $("#countCat").load('../inc/selectCategory.php');
+        $('#countLoc').load('../inc/selectLocation.php');
+
+        $('#initInvCount').on("submit", function (event) {
+            event.preventDefault();
+            console.log("initInvCount pressed");
+            var formData = $(this).serialize();
+            console.log(formData);
+            var initialize = $.post('../cfg/cfgGlobal.php', formData);
+            initialize.done(function(data) {
+                console.log("success:  " + data);
+                window.location.href = 'items.php';
+            });
+            initialize.fail(function(data) {
+                console.log("failure:  " + data.error);
+            });
+        });
+
+        $('body').on("click", "#supplyCount", function () {
+            window.location.href = '../supplyOrder';
+        });
+
+
+    });
+
+</script>
+
+
+</body>
+
+
+</html>

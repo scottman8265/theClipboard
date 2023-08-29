@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <title>Report Selection</title>
+    <link href="stylesheet2.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+
+</head>
+
+<body>
+
+<div data-role="page">
+
+    <div data-role="header">
+        <ul data-role="listview" data-split-icon="back">
+            <li>
+                <a href="#"><h1>Select Report to View</h1></a>
+                <a href="#" data-rel="back">Go Back</a>
+            </li>
+        </ul>
+    </div>
+    <div data-role="main" id="menu">
+        <div data-role="collapsibleset">
+            <div data-role="collapsible">
+                <h1>Weekly Inventory for Printing</h1>
+                <form name='dateSelection' method='POST' action='' id="inventoryDateSelector">
+                    <div id="selInvDateHolder"></div>
+                    <input type="submit" name="subInvDate" value="Get Inventory Report"/>
+                </form>
+            </div>
+            <div data-role="collapsible"> <!-- opens order report collapsible -->
+                <h1>Order Reports</h1>
+                <form name="invOrderReport" id="invOrderReport" method="POST" action="index.html">
+                    <div data-role="collapsible" class="ui-btn ui-corner-all ui-content" id="invReportBtn">
+                        <h3 class=''>Inventory Order Report</h3>
+                        <div class="centerText ui-content" style="margin-left:50%; transform:translate(-50%);">
+                            <div class="centerText" id="invReportDate" style="float:left;"></div>
+                            <div class="centerText" id="initInvReport" style="float:left; margin-left:20px;">
+                                <input class="centerText" type="submit" name="submit" id="initInvRepBtn"
+                                       value="Load Inv Report"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--supply order guide button-->
+                <form name="supReportReport" id="supReportReport" method="POST" action="index.html">
+                    <div data-role="collapsible" class="ui-btn ui-corner-all ui-content" id="supReportBtn">
+                        <h3 class=''>Supply Report Report</h3>
+                        <div class="centerText ui-content" style="margin-left:50%; transform:translate(-50%);">
+                            <div class="centerText" id="supReportDate" style="float:left;"></div>
+                            <div class="centerText" id="initSupReport" style="float:left; margin-left:20px;">
+                                <input type="submit" name="submit" id="initSupRepBtn" value="Load Supply Report"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div> <!-- closes order report collapsible -->
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<!--    <input type="button" value="Inventory" onclick="window.location.href='selectDate.php';"/>-->
+<!--    <input type="button" value="Order" onclick="window.location.href='selectDate2.php';"/>-->
+
+
+<script>
+    $(document).ready(function () {
+        $('#selInvDateHolder, #selOrderDateHolder').load('../inc/selectDate.php');
+
+        $('#orderGuideDateSelector').on("submit", function (event) {
+            event.preventDefault();
+            console.log("submit pressed");
+            var data = $(this).serialize();
+            var sent = $.post('../cfg/cfgGlobal.php', data);
+            sent.done(function (data) {
+                console.log("success: " + data);
+                window.location.href = '../order/invOrderGuide.php';
+            });
+            sent.fail(function (data) {
+                console.log("failure: " + data.error);
+            });
+
+            console.log(data);
+
+        });
+        $('#inventoryDateSelector').on("submit", function (event) {
+            event.preventDefault();
+            console.log("submit pressed");
+            var data = $(this).serialize();
+            console.log(data);
+            var sent = $.post('../cfg/cfgGlobal.php', data);
+            sent.done(function (data) {
+                console.log("success: " + data);
+                window.location.href = 'weeklyInventoryReport.php'
+            });
+            sent.fail(function (data) {
+                console.log("failure: " + data.error);
+            });
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+
+
+</html>

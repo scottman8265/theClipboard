@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - quenchInventory@198.71.227.89" uuid="f10f1b19-2775-4563-a7a1-be6322b2a2f2">
+    <database-info product="MySQL" version="5.5.43-37.2-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="quenchInventory"/>
+      <table id="2" parent="1" name="bottleSizes"/>
+      <table id="3" parent="1" name="categoryTbl"/>
+      <table id="4" parent="1" name="countTbl"/>
+      <table id="5" parent="1" name="dateTbl"/>
+      <table id="6" parent="1" name="familyTbl"/>
+      <table id="7" parent="1" name="fillTbl"/>
+      <table id="8" parent="1" name="finalCount"/>
+      <table id="9" parent="1" name="itemNameFillTable"/>
+      <table id="10" parent="1" name="itemTbl"/>
+      <table id="11" parent="1" name="locationTbl"/>
+      <table id="12" parent="1" name="receivingTbl"/>
+      <table id="13" parent="1" name="supplierTbl"/>
+      <column id="14" parent="2" name="sizeID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="15" parent="2" name="size">
+        <data-type>varchar(25)</data-type>
+      </column>
+      <column id="16" parent="2" name="ounces">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <index id="17" parent="2" name="sizeID_UNIQUE">
+        <columns>sizeID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="18" parent="2" name="PRIMARY">
+        <columns>sizeID</columns>
+        <primary>1</primary>
+      </key>
+      <key id="19" parent="2" name="sizeID_UNIQUE">
+        <columns>sizeID</columns>
+        <underlying-index>sizeID_UNIQUE</underlying-index>
+      </key>
+      <column id="20" parent="3" name="categoryName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(25)</data-type>
+      </column>
+      <column id="21" parent="3" name="categoryID">
+        <data-type>varchar(4)</data-type>
+      </column>
+      <column id="22" parent="3" name="startingNum">
+        <data-type>int(6)</data-type>
+      </column>
+      <column id="23" parent="3" name="endingNum">
+        <data-type>int(6)</data-type>
+      </column>
+      <column id="24" parent="3" name="family">
+        <data-type>varchar(25)</data-type>
+      </column>
+      <column id="25" parent="3" name="categoryPriority">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <index id="26" parent="3" name="name_UNIQUE">
+        <columns>categoryName</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="27" parent="3" name="name_UNIQUE">
+        <columns>categoryName</columns>
+        <underlying-index>name_UNIQUE</underlying-index>
+      </key>
+      <key id="28" parent="3" name="PRIMARY">
+        <columns>categoryName</columns>
+        <primary>1</primary>
+      </key>
+      <column id="29" parent="4" name="countID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="30" parent="4" name="itemNum">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="31" parent="4" name="countCol">
+        <data-type>decimal(5,2)</data-type>
+      </column>
+      <column id="32" parent="4" name="dateCol">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="33" parent="4" name="locationCol">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <key id="34" parent="4" name="PRIMARY">
+        <columns>countID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="35" parent="5" name="dateID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="36" parent="5" name="dateCol">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="37" parent="5" name="dateAct">
+        <data-type>date</data-type>
+      </column>
+      <index id="38" parent="5" name="dateID_UNIQUE">
+        <columns>dateID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="39" parent="5" name="date_UNIQUE">
+        <columns>dateCol</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="40" parent="5" name="dateID_UNIQUE">
+        <columns>dateID</columns>
+        <underlying-index>dateID_UNIQUE</underlying-index>
+      </key>
+      <key id="41" parent="5" name="date_UNIQUE">
+        <columns>dateCol</columns>
+        <underlying-index>date_UNIQUE</underlying-index>
+      </key>
+      <key id="42" parent="5" name="PRIMARY">
+        <columns>dateID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="43" parent="6" name="familyID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="44" parent="6" name="familyName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="45" parent="6" name="familyPriority">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <index id="46" parent="6" name="familyID_UNIQUE">
+        <columns>familyID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="47" parent="6" name="familyName_UNIQUE">
+        <columns>familyName</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="48" parent="6" name="familyID_UNIQUE">
+        <columns>familyID</columns>
+        <underlying-index>familyID_UNIQUE</underlying-index>
+      </key>
+      <key id="49" parent="6" name="familyName_UNIQUE">
+        <columns>familyName</columns>
+        <underlying-index>familyName_UNIQUE</underlying-index>
+      </key>
+      <key id="50" parent="6" name="PRIMARY">
+        <columns>familyName</columns>
+        <primary>1</primary>
+      </key>
+      <column id="51" parent="7" name="itemNum">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="52" parent="7" name="received">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="53" parent="7" name="countCol">
+        <data-type>decimal(5,2)</data-type>
+      </column>
+      <column id="54" parent="7" name="dateCol">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="55" parent="8" name="countID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="56" parent="8" name="dateCol">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="57" parent="8" name="itemNum">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="58" parent="8" name="countCol">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="59" parent="8" name="PRIMARY">
+        <columns>countID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="60" parent="9" name="itemName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="61" parent="9" name="receiving">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="62" parent="9" name="PRIMARY">
+        <columns>itemName</columns>
+        <primary>1</primary>
+      </key>
+      <column id="63" parent="10" name="itemNum">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="64" parent="10" name="itemName">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="65" parent="10" name="category">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="66" parent="10" name="supplier">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="67" parent="10" name="pack">
+        <data-type>int(6)</data-type>
+      </column>
+      <column id="68" parent="10" name="size">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="69" parent="10" name="flavor">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="70" parent="10" name="active">
+        <data-type>char(1)</data-type>
+      </column>
+      <index id="71" parent="10" name="itemNum_UNIQUE">
+        <columns>itemNum</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="72" parent="10" name="itemNum_UNIQUE">
+        <columns>itemNum</columns>
+        <underlying-index>itemNum_UNIQUE</underlying-index>
+      </key>
+      <key id="73" parent="10" name="PRIMARY">
+        <columns>itemNum</columns>
+        <primary>1</primary>
+      </key>
+      <column id="74" parent="11" name="locationID">
+        <mandatory>1</mandatory>
+        <data-type>varchar(6)</data-type>
+      </column>
+      <column id="75" parent="11" name="locationName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <index id="76" parent="11" name="locationID_UNIQUE">
+        <columns>locationID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="77" parent="11" name="locationID_UNIQUE">
+        <columns>locationID</columns>
+        <underlying-index>locationID_UNIQUE</underlying-index>
+      </key>
+      <key id="78" parent="11" name="PRIMARY">
+        <columns>locationName</columns>
+        <primary>1</primary>
+      </key>
+      <column id="79" parent="12" name="receivingID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="80" parent="12" name="supplierID">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="81" parent="12" name="itemNum">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="82" parent="12" name="receivedCol">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="83" parent="12" name="dateCol">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="84" parent="12" name="receivingID_UNIQUE">
+        <columns>receivingID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="85" parent="12" name="PRIMARY">
+        <columns>receivingID</columns>
+        <primary>1</primary>
+      </key>
+      <key id="86" parent="12" name="receivingID_UNIQUE">
+        <columns>receivingID</columns>
+        <underlying-index>receivingID_UNIQUE</underlying-index>
+      </key>
+      <column id="87" parent="13" name="supplierName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="88" parent="13" name="supplierID">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="89" parent="13" name="supplierPriority">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <index id="90" parent="13" name="supplierCode_UNIQUE">
+        <columns>supplierID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="91" parent="13" name="supplierName_UNIQUE">
+        <columns>supplierName</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="92" parent="13" name="PRIMARY">
+        <columns>supplierID</columns>
+        <primary>1</primary>
+      </key>
+      <key id="93" parent="13" name="supplierCode_UNIQUE">
+        <columns>supplierID</columns>
+        <underlying-index>supplierCode_UNIQUE</underlying-index>
+      </key>
+      <key id="94" parent="13" name="supplierName_UNIQUE">
+        <columns>supplierName</columns>
+        <underlying-index>supplierName_UNIQUE</underlying-index>
+      </key>
+    </database-model>
+  </data-source>
+</component>

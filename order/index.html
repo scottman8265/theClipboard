@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>theClipboard</title>
+    <link href="inc/stylesheet.css" rel="stylesheet" type="text/css"/>
+    <title>Report Selection</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+
+</head>
+
+<body>
+<p>Select Your Option</p>
+
+<a class='ui-btn' id="countBtn" href='#'>Inventory Count</a>
+<a class='ui-btn' id='supplyCount'>Supply Count</a>
+<a class='ui-btn' id="receiveBtn" href='#'>Receive</a>
+<a class='ui-btn' id="reportBtn" href='#'>Report</a>
+<a class='ui-btn' id="orderBtn" href='#'>Order</a>
+<a class='ui-btn' id="addBtn" href='#'>Add/Update</a>
+
+
+
+<script>
+    $(document).ready(function () {
+
+        $('body').on("click", "#countBtn", function () {
+            window.location.href = 'enterCount';
+        });
+
+        $('body').on("click", "#receiveBtn", function () {
+            window.location.href = 'receiveInventory';
+        });
+
+        $('body').on("click", "#reportBtn", function () {
+            window.location.href = 'reports';
+        });
+
+        $('body').on("click", "#addBtn", function () {
+            window.location.href = 'addItem';
+        });
+
+        $('body').on("click", "#supplyCount", function() {
+            window.location.href = 'supplyOrder';
+        });
+
+        $('body').on("click", "#orderBtn", function() {
+            window.location.href = 'orderBtn';
+        });
+
+
+    });
+
+</script>
+
+
+</body>
+
+
+</html>

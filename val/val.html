@@ -1,0 +1,50 @@
+<?php
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ?>
+
+<form name='validateUser' id='validateUser' method='POST' action=''>
+    <label for='userReq'>Enter Your Code</label>
+    <input type='text' id='userReq' name='userReq'/>
+    <input type='submit' id='userSubmit' name='userSubmit' value='Submit Code'/>
+</form>
+
+<script>
+    $('body').on('submit', '#validateUser', function (event) {
+        event.preventDefault();
+        var formData1 = $(this).serialize();
+        var formDataHTML = $(this).html();
+        console.log("formDataHTML code = " + formDataHTML);
+        console.log($('#invalidUserHolder').text());
+        var urlA = '../val/who.php';
+        var send = $.post(urlA, formData1, null, 'json');
+        console.log("serialized form data = " + formData1);
+        send.done(function(data) {
+            console.log ("success: " + data.success);
+            var $success = data.success;
+            if ($success) {
+                $('#validateUser').css("display", "none");
+                $('#costReport').css("display", "inline");
+            }
+            if (!$success) {
+                $('#validateUser').css("display", "none");
+                $('#invalidUserHolder').text("Sorry... You Cannot View This Report");
+            }
+        });
+        send.fail(function(a, b, c) {
+            console.log("failed verifying user [why]: " + a.responseText);
+        });
+
+    });
+</script>

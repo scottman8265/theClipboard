@@ -1,0 +1,67 @@
+table.table1 {
+font-family:verdana,arial,sans-serif;
+font-size:20px;
+color:#333333;
+border-width:1px;
+background-color: deepskyblue;
+border-color:#999999;
+border-collapse:collapse;
+}
+
+table.table2 {
+font-family:verdana,arial,sans-serif;
+font-size:20px;
+color:#333333;
+border-width:1px;
+background-color:lightblue;
+border-color:#999999;
+border-collapse:collapse;
+}
+
+input[type="text"] {
+  display: block;
+  margin: 0;
+  width: 100px;
+  height: 100px;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+td.itemName {
+    font-family:verdana,arial,sans-serif;
+    font-size:20px;
+    font-weight: bold;
+    background-color: chartreuse;
+}
+
+select {
+   background: transparent;
+   width: 100px;
+   height: 100px;
+   padding: 5px;
+   font-size: 20px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+
+}
+
+input[type="button"] {
+  display: block;
+  margin: 0;
+  width: 100px;
+  height: 100px;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+}

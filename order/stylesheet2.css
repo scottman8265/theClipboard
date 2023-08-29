@@ -1,0 +1,88 @@
+
+h1 {
+   font-family:verdana,arial,sans-serif;
+   font-size:30px;
+   text-align:center;
+   font-weight:bolder;
+}
+
+input[type="text"] {
+  display: block;
+  margin: 0;
+  width: 100px;
+  height: 100px;
+  font-family: sans-serif;
+  font-size: 18px;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+td {
+    text-align: center;
+    margin: 0;
+}
+
+table {
+    left: 50%;
+}
+
+th {
+    text-align: center;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    margin: 0;
+}
+
+th.category {
+    text-align: left;
+    background-color: white;
+    
+}
+
+tr {
+    background-color: #D2F4F8;
+    margin: 0;
+}
+
+
+td.order {
+    background-color: red;
+}
+
+td.itemName {
+    font-family:verdana,arial,sans-serif;
+    font-size:20px;
+    font-weight: bold;
+    background-color: #FBE29B;
+}
+
+select {
+   background: transparent;
+   width: 100px;
+   padding: 5px;
+   font-size: 20px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+
+}
+
+input[type="button"] {
+  display: block;
+  margin: 0;
+  width: 100px;
+  height: 100px;
+  font-family: sans-serif;
+  font-size: 18px;
+  box-shadow: none;
+  border-radius: 0;
+}
+p {
+    font-weight: bold;
+}

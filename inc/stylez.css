@@ -1,0 +1,72 @@
+#container {
+    min-width: 400px;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.button {
+    width:95px;
+    max-width:95px;
+    max-height:95px;
+    height:95px;
+    border-radius:5px;
+    box-shadow: 1px 1px 2px black;
+    position:relative;
+    float:left;
+}
+
+.hidden {
+    display:none;
+}
+
+body {
+    width: calc(100vw - 25px);
+    height: 100%;
+    text-align: center;
+}
+
+#pageContainer {
+    height: 100%;
+    width: 100%;
+}
+
+#catMenuHolder #locMenuHolder {
+    position:relative;
+    width:100%;
+    float:left;
+}
+
+input[name='sendCount'] {
+    width: 100%;
+
+}
+
+input[type="tel"]:focus {
+    outline: none;
+}
+
+#itemArea {
+    font-family: verdana, arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: chartreuse;
+}
+
+#countArea {
+    width: auto;
+    height: 100%;
+}
+
+/*input[type="text"] {
+    display: block;
+    margin: 0;
+    width: 100px;
+    height: 100px;
+    font-family: sans-serif;
+    font-size: 18px;
+    box-shadow: none;
+    border-radius: 0;
+}*/
+
